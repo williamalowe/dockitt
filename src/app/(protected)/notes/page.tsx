@@ -1,7 +1,6 @@
 import NewNoteForm from "@/components/NewNoteForm";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import { BiSolidPaperPlane } from "react-icons/bi";
 
 export default async function NotesPage() {
   const supabase = await createClient();
