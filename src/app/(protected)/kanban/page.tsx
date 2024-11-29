@@ -32,15 +32,15 @@ export default async function KanbanPage() {
               className="relative hover:-rotate-2 transition"
             >
               <div className="bg-red-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
-              <div className="flex-1 card bg-base-100 w-96 shadow-xl">
+              <div className="flex-1 card bg-base-100 max-w-full shadow-xl">
                 <div className="card-body">
                   <h2 className="card-title">{dockitt.task}</h2>
                   <p>{dockitt.description}</p>
                   <div className="card-actions justify-end">
-                    <button className="btn text-lg">
+                    <button className="btn btn-sm text">
                       <BsTrash2 />
                     </button>
-                    <button className="btn text-lg">
+                    <button className="btn btn-sm text">
                       <BsCaretRightFill />
                     </button>
                   </div>
@@ -59,18 +59,18 @@ export default async function KanbanPage() {
               className="relative hover:-rotate-2 transition"
             >
               <div className="bg-yellow-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
-              <div className="flex-1 card bg-base-100 w-96 shadow-xl">
+              <div className="flex-1 card bg-base-100 max-w-full shadow-xl">
                 <div className="card-body">
                   <h2 className="card-title">{dockitt.task}</h2>
                   <p>{dockitt.description}</p>
                   <div className="card-actions justify-end">
-                    <button className="btn text-lg">
+                    <button className="btn btn-sm">
                       <BsX />
                     </button>
-                    <button className="btn text-lg">
+                    <button className="btn btn-sm">
                       <BsCaretLeftFill />
                     </button>
-                    <button className="btn text-lg">
+                    <button className="btn btn-sm">
                       <BsCaretRightFill />
                     </button>
                   </div>
@@ -89,18 +89,18 @@ export default async function KanbanPage() {
               className="relative hover:-rotate-2 transition"
             >
               <div className="bg-purple-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
-              <div className="flex-1 card bg-base-100 w-96 shadow-xl">
+              <div className="flex-1 card bg-base-100 max-w-full shadow-xl">
                 <div className="card-body">
                   <h2 className="card-title">{dockitt.task}</h2>
                   <p>{dockitt.description}</p>
                   <div className="card-actions justify-end">
-                    <button className="btn text-lg">
+                    <button className="btn btn-sm">
                       <BsX />
                     </button>
-                    <button className="btn text-lg">
+                    <button className="btn btn-sm">
                       <BsCaretLeftFill />
                     </button>
-                    <button className="btn text-lg">
+                    <button className="btn btn-sm">
                       <BsCaretRightFill />
                     </button>
                   </div>
@@ -119,15 +119,15 @@ export default async function KanbanPage() {
               className="relative hover:-rotate-2 transition"
             >
               <div className="bg-emerald-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
-              <div className="flex-1 card bg-base-100 w-96 shadow-xl">
+              <div className="flex-1 card bg-base-100 max-w-full shadow-xl">
                 <div className="card-body">
                   <h2 className="card-title">{dockitt.task}</h2>
                   <p>{dockitt.description}</p>
                   <div className="card-actions justify-end">
-                    <button className="btn text-lg">
+                    <button className="btn btn-sm">
                       <BsCaretLeftFill />
                     </button>
-                    <button className="btn text-lg">
+                    <button className="btn btn-sm">
                       <BsCheck />
                     </button>
                   </div>

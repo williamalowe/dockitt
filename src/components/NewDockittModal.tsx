@@ -3,7 +3,7 @@ import NewDockittForm from "./NewDockettForm";
 const NewDockittModal = () => {
   return (
     <>
-      <label htmlFor="my_modal_6" className="fixed top-4 left-24 btn btn-primary w-full max-w-xs">
+      <label htmlFor="my_modal_6" className="fixed bottom-4 right-[calc(50%-14rem)] btn btn-primary w-full max-w-md">
         New Dockitt
       </label>
 
