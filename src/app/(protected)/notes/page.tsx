@@ -1,3 +1,4 @@
+import NewNoteForm from "@/components/NewNoteForm";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { BiSolidPaperPlane } from "react-icons/bi";
@@ -32,10 +33,7 @@ export default async function NotesPage() {
           </li>
         ))}
       </ul>
-      <div className="fixed bottom-6 flex gap-x-2">
-        <input type="text" placeholder="Enter a message" className="input input-bordered w-[80vw] rounded-full" />
-        <button className="btn rounded-full"><BiSolidPaperPlane /></button>
-      </div>
+      <NewNoteForm />
     </main>
   );
 }
