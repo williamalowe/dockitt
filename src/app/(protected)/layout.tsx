@@ -1,5 +1,4 @@
 // import Header from '@/components/Header'
-import NewDockittModal from '@/components/NewDockittModal'
 import Sidebar from '@/components/Sidebar'
 import Welcome from '@/components/Welcome'
 import React from 'react'
@@ -12,7 +11,6 @@ const layout = ({ children }: {
         {/* <Header /> */}
         <Sidebar />
         {children}
-        <NewDockittModal />
         <div className='absolute top-4 right-4'>
             <Welcome />
         </div>

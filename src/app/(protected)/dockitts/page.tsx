@@ -1,3 +1,5 @@
+import NewDockittModal from "@/components/NewDockittModal";
+import UpdateStatusBtns from "@/components/UpdateStatusBtns";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 
@@ -44,12 +46,35 @@ export default async function DockittsPage() {
                   <th>{dockitt.status}</th>
                   <th>{dockitt.priority}</th>
                   <th>{dockitt.description}</th>
-                  <th></th>
+                  <th>                  {
+                    dockitt.status === "Backlog" ? 
+                    <UpdateStatusBtns 
+                      btnGroup={1}
+                      id={dockitt.id}
+                      status="Backlog"
+                    /> : dockitt.status === "In Progress" ? 
+                    <UpdateStatusBtns 
+                      btnGroup={2}
+                      id={dockitt.id}
+                      status="In Progress"
+                    /> : dockitt.status === "Under Review" ? 
+                    <UpdateStatusBtns 
+                      btnGroup={2}
+                      id={dockitt.id}
+                      status="Under Review"
+                    /> : dockitt.status === "Completed" ? 
+                    <UpdateStatusBtns 
+                      btnGroup={3}
+                      id={dockitt.id}
+                      status="Completed"
+                    /> : <p className="uppercase text-end text-red-500">Cancelled</p>
+                  }</th>
                 </tr>
               ))}
           </tbody>
         </table>
       </div>
+      <NewDockittModal />
     </main>
   );
 }
