@@ -40,7 +40,7 @@ export async function updateDockittStatusForward({
   currentStatus: string;
 }) {
   const supabase = await createClient();
-  const data = await supabase
+  await supabase
     .from("dockitts")
     .update({
       status:
@@ -64,7 +64,7 @@ export async function updateDockittStatusBackwards({
   currentStatus: string;
 }) {
   const supabase = await createClient();
-  const data = await supabase
+  await supabase
 
     .from("dockitts")
     .update({
@@ -82,7 +82,7 @@ export async function updateDockittStatusBackwards({
 }
 export async function updateDockittStatusCancelled({ id }: { id: number }) {
   const supabase = await createClient();
-  const data = await supabase
+  await supabase
 
     .from("dockitts")
     .update({
@@ -96,7 +96,7 @@ export async function updateDockittStatusCancelled({ id }: { id: number }) {
 
 export async function deleteDockitt({ id }: { id: number }) {
   const supabase = await createClient();
-  const data = await supabase
+  await supabase
 
     .from("dockitts")
     .delete()
