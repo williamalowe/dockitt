@@ -40,7 +40,7 @@ export async function updateDockittStatusForward({
   currentStatus: string;
 }) {
   const supabase = await createClient();
-  const { data, error } = await supabase
+  const data = await supabase
     .from("dockitts")
     .update({
       status:
@@ -64,44 +64,44 @@ export async function updateDockittStatusBackwards({
   currentStatus: string;
 }) {
   const supabase = await createClient();
-  const // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    { data, error } = await supabase
-      .from("dockitts")
-      .update({
-        status:
-          currentStatus === "Completed"
-            ? "Under Review"
-            : currentStatus === "Under Review"
-            ? "In Progress"
-            : "Backlog",
-      })
-      .eq("id", id) // where 'specificId' is the ID you're targeting
-      .select();
+  const data = await supabase
+
+    .from("dockitts")
+    .update({
+      status:
+        currentStatus === "Completed"
+          ? "Under Review"
+          : currentStatus === "Under Review"
+          ? "In Progress"
+          : "Backlog",
+    })
+    .eq("id", id) // where 'specificId' is the ID you're targeting
+    .select();
 
   revalidatePath("/");
 }
 export async function updateDockittStatusCancelled({ id }: { id: number }) {
   const supabase = await createClient();
-  const // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    { data, error } = await supabase
-      .from("dockitts")
-      .update({
-        status: "Cancelled",
-      })
-      .eq("id", id) // where 'specificId' is the ID you're targeting
-      .select();
+  const data = await supabase
+
+    .from("dockitts")
+    .update({
+      status: "Cancelled",
+    })
+    .eq("id", id) // where 'specificId' is the ID you're targeting
+    .select();
 
   revalidatePath("/");
 }
 
 export async function deleteDockitt({ id }: { id: number }) {
   const supabase = await createClient();
-  const // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    { data, error } = await supabase
-      .from("dockitts")
-      .delete()
-      .eq("id", id) // where 'specificId' is the ID you're targeting
-      .select();
+  const data = await supabase
+
+    .from("dockitts")
+    .delete()
+    .eq("id", id) // where 'specificId' is the ID you're targeting
+    .select();
 
   revalidatePath("/");
 }
