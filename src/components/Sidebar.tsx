@@ -81,7 +81,7 @@ export default async function Sidebar(){
     <>
       <div className="drawer z-20">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content fixed top-4 left-4">
+        <div className="drawer-content">
           <label htmlFor="my-drawer" className="btn btn-ghost drawer-button">
             <svg
               className="swap-off fill-current"

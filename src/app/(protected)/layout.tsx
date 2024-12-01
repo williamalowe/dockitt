@@ -7,13 +7,12 @@ const layout = ({ children }: {
     children: React.ReactNode
 }) => {
   return (
-    <div className='min-h-screen flex flex-col py-24 px-12'>
-        {/* <Header /> */}
+    <div className='min-h-screen flex flex-col px-2 lg:px-8 py-4'>
+      <div className='flex'>
         <Sidebar />
+        <Welcome />
+      </div>
         {children}
-        <div className='absolute top-4 right-4'>
-            <Welcome />
-        </div>
     </div>
   )
 }
