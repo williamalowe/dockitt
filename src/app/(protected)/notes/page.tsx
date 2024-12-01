@@ -25,7 +25,6 @@ export default async function NotesPage() {
                 <time className="text-xs opacity-50 ml-4">{note.created_at.slice(0,10)} {note.created_at.slice(11,16)}</time>
               </div>
               <div className="chat-bubble">
-                <h5>{note.title}</h5>
                 <p>{note.message}</p>
                 </div>
             </div>

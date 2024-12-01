@@ -18,14 +18,15 @@ export default async function DockittsPage() {
   return (
     <main className="flex-1 flex justify-center">
       <div className="overflow-x-auto w-full">
-        <table className="table table-zebra">
+        {/* normal view */}
+        <table className="hidden lg:table table table-zebra">
           {/* head */}
           <thead>
             <tr>
-              <th className="hidden lg:block"></th>
+              <th className=""></th>
               <th>Task</th>
-              <th>Status</th>
-              <th>Priority</th>
+              <th className="">Status</th>
+              <th className="">Priority</th>
               <th>Description</th>
               <th></th>
             </tr>
@@ -35,40 +36,106 @@ export default async function DockittsPage() {
             {dockitts &&
               dockitts.map((dockitt) => (
                 <tr key={dockitt.id}>
-                  <th className="hidden lg:block">
-                    {
-                      dockitt.tag ? <> {dockitt.id} -
-                    <div className="ml-1 badge badge-outline">{dockitt.tag}</div></> :
-                    <>{dockitt.id}</>
-                    }
+                  <th className="">
+                    {dockitt.tag ? (
+                      <>
+                        {" "}
+                        {dockitt.id} -
+                        <div className="ml-1 badge badge-outline">
+                          {dockitt.tag}
+                        </div>
+                      </>
+                    ) : (
+                      <>{dockitt.id}</>
+                    )}
                   </th>
                   <th>{dockitt.task}</th>
-                  <th>{dockitt.status}</th>
-                  <th>{dockitt.priority}</th>
-                  <th>{dockitt.description}</th>
-                  <th>                  {
-                    dockitt.status === "Backlog" ? 
-                    <UpdateStatusBtns 
-                      btnGroup={1}
-                      id={dockitt.id}
-                      status="Backlog"
-                    /> : dockitt.status === "In Progress" ? 
-                    <UpdateStatusBtns 
-                      btnGroup={2}
-                      id={dockitt.id}
-                      status="In Progress"
-                    /> : dockitt.status === "Under Review" ? 
-                    <UpdateStatusBtns 
-                      btnGroup={2}
-                      id={dockitt.id}
-                      status="Under Review"
-                    /> : dockitt.status === "Completed" ? 
-                    <UpdateStatusBtns 
-                      btnGroup={3}
-                      id={dockitt.id}
-                      status="Completed"
-                    /> : <p className="uppercase text-end text-red-500">Cancelled</p>
-                  }</th>
+                  <th className="">{dockitt.status}</th>
+                  <th className="">{dockitt.priority}</th>
+                  <th className="">{dockitt.description}</th>
+                  <th>
+                    {" "}
+                    {dockitt.status === "Backlog" ? (
+                      <UpdateStatusBtns
+                        btnGroup={1}
+                        id={dockitt.id}
+                        status="Backlog"
+                      />
+                    ) : dockitt.status === "In Progress" ? (
+                      <UpdateStatusBtns
+                        btnGroup={2}
+                        id={dockitt.id}
+                        status="In Progress"
+                      />
+                    ) : dockitt.status === "Under Review" ? (
+                      <UpdateStatusBtns
+                        btnGroup={2}
+                        id={dockitt.id}
+                        status="Under Review"
+                      />
+                    ) : dockitt.status === "Completed" ? (
+                      <UpdateStatusBtns
+                        btnGroup={3}
+                        id={dockitt.id}
+                        status="Completed"
+                      />
+                    ) : (
+                      <p className="uppercase text-end text-red-500">
+                        Cancelled
+                      </p>
+                    )}
+                  </th>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+        {/* mobile view */}
+        <table className="lg:hidden table table-zebra">
+          {/* head */}
+          <thead>
+            <tr>
+              <th>Tasks</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* rows */}
+            {dockitts &&
+              dockitts.map((dockitt) => (
+                <tr key={dockitt.id} className="flex flex-col">
+                  <th>{dockitt.task}</th>
+                  <th className="font-normal">{dockitt.description}</th>
+                  <th className="flex flex-col">
+                    {" "}
+                    {dockitt.status === "Backlog" ? (
+                      <UpdateStatusBtns
+                        btnGroup={1}
+                        id={dockitt.id}
+                        status="Backlog"
+                      />
+                    ) : dockitt.status === "In Progress" ? (
+                      <UpdateStatusBtns
+                        btnGroup={2}
+                        id={dockitt.id}
+                        status="In Progress"
+                      />
+                    ) : dockitt.status === "Under Review" ? (
+                      <UpdateStatusBtns
+                        btnGroup={2}
+                        id={dockitt.id}
+                        status="Under Review"
+                      />
+                    ) : dockitt.status === "Completed" ? (
+                      <UpdateStatusBtns
+                        btnGroup={3}
+                        id={dockitt.id}
+                        status="Completed"
+                      />
+                    ) : (
+                      <p className="uppercase text-end text-red-500">
+                        Cancelled
+                      </p>
+                    )}
+                  </th>
                 </tr>
               ))}
           </tbody>
