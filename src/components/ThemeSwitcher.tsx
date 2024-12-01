@@ -19,7 +19,7 @@ const ThemeSwitcher = () => {
       </svg>
       <input
         type="checkbox"
-        value="dark"
+        value="business"
         className="toggle theme-controller"
       />
       <svg
