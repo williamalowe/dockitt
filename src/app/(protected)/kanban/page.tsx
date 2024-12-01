@@ -17,7 +17,7 @@ export default async function KanbanPage() {
   }
 
   return (
-    <main className="flex-1 flex flex-col lg:flex-row gap-y-4 gap-x-4">
+    <main className="flex-1 flex flex-col justify-center lg:flex-row gap-y-4 gap-x-4">
       <ul className="flex-1 flex flex-col gap-y-2 ">
         <h2 className="italic text-2xl text-red-600">
           Backlog -{" "}
