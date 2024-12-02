@@ -3,8 +3,11 @@
 import { addDockitt } from "@/actions/dockitts/actions";
 import { useRef } from "react";
 
-const NewDockittForm = () => {
+const NewDockittForm = ({ selectedProject }: {
+  selectedProject: string
+}) => {
   const ref = useRef<HTMLFormElement>(null);
+  console.log(selectedProject);
   return (
     <form
       className="flex flex-col outline-none items-center gap-2"
@@ -16,6 +19,7 @@ const NewDockittForm = () => {
     >
       <label className="input input-bordered flex items-center gap-2 w-full max-w-xs">
         <input type="text" className="grow" placeholder="Enter Task" id="task" name="task" required/>
+        <input type="text" className="hidden" id="project" name="project" readOnly value={selectedProject} />
       </label>
       <select
         className="select select-bordered w-full max-w-xs"

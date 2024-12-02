@@ -16,7 +16,7 @@ export default async function DockittsPage() {
   }
 
   return (
-      <main className="flex-1 flex justify-center">
+    <main className="flex-1 flex justify-center">
       <div className="overflow-x-auto w-full">
         {/* normal view */}
         <table className="hidden lg:table table table-zebra">
@@ -142,7 +142,7 @@ export default async function DockittsPage() {
           </tbody>
         </table>
       </div>
-      <NewDockittModal />
-    </main>  
+      <NewDockittModal selectedProject="dockitt" />
+    </main>
   );
 }

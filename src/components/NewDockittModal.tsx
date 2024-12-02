@@ -1,6 +1,8 @@
 import NewDockittForm from "./NewDockettForm";
 
-const NewDockittModal = () => {
+const NewDockittModal = ({ selectedProject }: {
+  selectedProject: string
+}) => {
   return (
     <>
       <label htmlFor="my_modal_6" className="z-20 fixed bottom-2 btn btn-primary w-[80vw] max-w-md">
@@ -13,7 +15,7 @@ const NewDockittModal = () => {
           <h3 className="text-center capitalize mb-2 text-2xl font-bold">
             Add new Dockitt
           </h3>
-          <NewDockittForm />
+          <NewDockittForm selectedProject={selectedProject}/>
           <div className="modal-action">
             <label htmlFor="my_modal_6" className="btn">
               Close!

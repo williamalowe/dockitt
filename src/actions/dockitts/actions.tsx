@@ -22,6 +22,8 @@ export async function addDockitt(formData: FormData) {
         priority: formData.get("priority") as string,
         tag: formData.get("tag") as string,
         description: formData.get("description") as string,
+        created_by: user?.email,
+        project: formData.get("project") as string
       },
     ])
     .select();

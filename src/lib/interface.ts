@@ -1,10 +1,18 @@
 export interface Dockitt {
+    // id: number,
+    // task: string,
+    // status: string,
+    // priority: string,
+    // tag: string,
+    // description: string
     id: number,
     task: string,
     status: string,
     priority: string,
     tag: string,
-    description: string
+    description: string,
+    created_at: string,
+    created_by: string
 }
 
 export interface Note {

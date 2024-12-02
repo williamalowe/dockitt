@@ -2,7 +2,7 @@ import Link from "next/link";
 import {
   AiOutlineAppstoreAdd,
   AiOutlineForm,
-  // AiOutlineLineChart,
+  AiOutlineLineChart,
   AiOutlineUnorderedList,
 } from "react-icons/ai";
 import ThemeSwitcher from "./ThemeSwitcher";
@@ -12,24 +12,24 @@ import { createClient } from "@/utils/supabase/server";
 const navLinks = [
   {
     header: "All Tasks",
-    href: "/dockitts",
+    href: "./dockitts",
     icon: <AiOutlineUnorderedList />,
   },
   {
     header: "Kanban Board",
-    href: "/kanban",
+    href: "./kanban",
     icon: <AiOutlineAppstoreAdd />,
   },
   {
     header: "Notes",
-    href: "/notes",
+    href: "./notes",
     icon: <AiOutlineForm />,
   },
-  // {
-  //   header: "Dashboard",
-  //   href: "/dashboard",
-  //   icon: <AiOutlineLineChart />,
-  // },
+  {
+    header: "Dashboard",
+    href: "./dashboard",
+    icon: <AiOutlineLineChart />,
+  },
 ];
 
 const dockittList = [
@@ -65,13 +65,15 @@ const dockittList = [
   },
 ];
 
-export default async function Sidebar() {
+export default async function Sidebar({ selectedProject }: {
+  selectedProject: string,
+}) {
   const supabase = await createClient();
 
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  const { data: dockitts } = await supabase.from("dockitts").select();
+  const { data: dockitts } = await supabase.from("dockitts").select().eq('project', selectedProject);
 
   if (!user) {
     return redirect("/login");

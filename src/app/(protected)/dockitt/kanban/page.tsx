@@ -51,6 +51,12 @@ export default async function KanbanPage() {
                         {dockitt.task}
                       </h2>
                       <p>{dockitt.description}</p>
+                      <p className="mt-4 text-xs tracking-wide">
+                        Created by:{" "}
+                        <span className="italic font-bold">
+                          {dockitt.created_by}
+                        </span>
+                      </p>
                       <div className="flex items-center">
                         <p>
                           Priority:
@@ -110,6 +116,12 @@ export default async function KanbanPage() {
                         {dockitt.task}
                       </h2>{" "}
                       <p>{dockitt.description}</p>
+                      <p className="mt-4 text-xs tracking-wide">
+                        Created by:{" "}
+                        <span className="italic font-bold">
+                          {dockitt.created_by}
+                        </span>
+                      </p>
                       <div className="flex items-center">
                         <p>
                           Priority:
@@ -169,6 +181,12 @@ export default async function KanbanPage() {
                         {dockitt.task}
                       </h2>{" "}
                       <p>{dockitt.description}</p>
+                      <p className="mt-4 text-xs tracking-wide">
+                        Created by:{" "}
+                        <span className="italic font-bold">
+                          {dockitt.created_by}
+                        </span>
+                      </p>
                       <div className="flex items-center">
                         <p>
                           Priority:
@@ -228,6 +246,12 @@ export default async function KanbanPage() {
                         {dockitt.task}
                       </h2>{" "}
                       <p>{dockitt.description}</p>
+                      <p className="mt-4 text-xs tracking-wide">
+                        Created by:{" "}
+                        <span className="italic font-bold">
+                          {dockitt.created_by}
+                        </span>
+                      </p>
                       <div className="flex items-center">
                         <p>
                           Priority:
@@ -255,7 +279,7 @@ export default async function KanbanPage() {
               ))
           )}
         </ul>
-        <NewDockittModal />
+        <NewDockittModal selectedProject="dockitt" />
       </main>
       {/* Mobile View */}
       <main className="lg:hidden flex-1 flex flex-col justify-center gap-y-4 gap-x-4">
@@ -271,10 +295,7 @@ export default async function KanbanPage() {
             dockitts
               ?.filter((item) => item.status === "Backlog")
               .map((dockitt) => (
-                <li
-                  key={dockitt.id}
-                  className="relative"
-                >
+                <li key={dockitt.id} className="relative">
                   <div className="bg-red-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl" />
                   <div className="flex-1 card bg-base-100 w-[80vw] shadow-xl">
                     <div className="card-body relative">
@@ -330,10 +351,7 @@ export default async function KanbanPage() {
             dockitts
               ?.filter((item) => item.status === "In Progress")
               .map((dockitt) => (
-                <li
-                  key={dockitt.id}
-                  className="relative"
-                >
+                <li key={dockitt.id} className="relative">
                   <div className="bg-yellow-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
                   <div className="flex-1 card bg-base-100 w-[80vw] shadow-xl">
                     <div className="card-body relative">
@@ -389,10 +407,7 @@ export default async function KanbanPage() {
             dockitts
               ?.filter((item) => item.status === "Under Review")
               .map((dockitt) => (
-                <li
-                  key={dockitt.id}
-                  className="relative"
-                >
+                <li key={dockitt.id} className="relative">
                   <div className="bg-purple-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
                   <div className="flex-1 card bg-base-100 w-[80vw] shadow-xl">
                     <div className="card-body relative">
@@ -448,10 +463,7 @@ export default async function KanbanPage() {
             dockitts
               ?.filter((item) => item.status === "Completed")
               .map((dockitt) => (
-                <li
-                  key={dockitt.id}
-                  className="relative"
-                >
+                <li key={dockitt.id} className="relative">
                   <div className="bg-emerald-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
                   <div className="flex-1 card bg-base-100 w-[80vw] shadow-xl">
                     <div className="card-body relative">
@@ -496,7 +508,7 @@ export default async function KanbanPage() {
           )}
         </ul>
         <div className="flex justify-center">
-          <NewDockittModal />
+          <NewDockittModal selectedProject="dockitt" />
         </div>
       </main>
     </>
