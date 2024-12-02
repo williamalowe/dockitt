@@ -18,5 +18,5 @@ export const signIn = async (formData: FormData) => {
     return encodedRedirect("error", "/login", error.message);
   }
 
-  return redirect("/dockitts");
+  return redirect("/");
 };
