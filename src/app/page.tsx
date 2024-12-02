@@ -11,6 +11,6 @@ export default async function Page() {
   if (!user) {
     return redirect("/login");
   } else {
-    return redirect("/dockitts");
+    return redirect("/wayfarer/dockitts");
   }
 }
