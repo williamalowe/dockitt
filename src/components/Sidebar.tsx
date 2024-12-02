@@ -81,7 +81,7 @@ export default async function Sidebar({ selectedProject }: {
 
   return (
     <>
-      <div className="drawer z-20">
+      <div className="flex-1 drawer z-20">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
           <label htmlFor="my-drawer" className="btn btn-ghost drawer-button">

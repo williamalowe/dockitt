@@ -10,7 +10,6 @@ const layout = ({ children }: { children: React.ReactNode }) => {
       <div className="flex">
         <Sidebar selectedProject="wayfarer" />
         <ProjectDropdown />
-
         <Welcome />
       </div>
       {children}

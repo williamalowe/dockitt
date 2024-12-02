@@ -7,7 +7,7 @@ export default async function Welcome() {
       data: { user },
     } = await supabase.auth.getUser();
     return user && (
-      <div className="flex items-center gap-x-2">
+      <div className="flex-1 flex items-center gap-x-2 justify-end">
         <h5>
           Welcome, <span className="font-bold">{user.email}</span>
         </h5>
