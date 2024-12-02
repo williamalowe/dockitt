@@ -14,6 +14,7 @@ const layout = ({ children }: {
           <Sidebar selectedProject='dockitt'/>
           <ProjectDropdown />
         </div>
+        <h1 className='flex-1 text-center font-bold text-2xl'>Dockitt Project Board</h1>
         <Welcome />
       </div>
         {children}

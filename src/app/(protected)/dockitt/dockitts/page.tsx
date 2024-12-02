@@ -42,7 +42,7 @@ export default async function DockittsPage() {
                     {dockitt.tag ? (
                       <>
                         {" "}
-                        {dockitt.task} -
+                        {dockitt.task} 
                         <div className="ml-1 badge badge-outline">
                           {dockitt.tag}
                         </div>
