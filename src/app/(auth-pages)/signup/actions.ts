@@ -14,7 +14,7 @@ export const signUp = async (formData: FormData) => {
     return encodedRedirect(
       "error",
       "/sign-up",
-      "Email and password are required"
+      "Email and password are required",
     );
   }
 
@@ -33,7 +33,7 @@ export const signUp = async (formData: FormData) => {
     return encodedRedirect(
       "success",
       "/signup",
-      "Thanks for signing up! Please check your email for a verification link."
+      "Thanks for signing up! Please check your email for a verification link.",
     );
   }
 };

@@ -43,7 +43,7 @@ const NewDockittForm = ({ selectedProject }: {
         placeholder="Dockitt Description"
         id="description" name="description"
       ></textarea>
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn btn-neutral hover:scale-110 transition">
         Add Dockitt
       </button>
     </form>

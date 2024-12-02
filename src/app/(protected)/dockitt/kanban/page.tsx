@@ -1,4 +1,3 @@
-import NewDockittModal from "@/components/NewDockittModal";
 import UpdateStatusBtns from "@/components/UpdateStatusBtns";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
@@ -283,9 +282,10 @@ export default async function KanbanPage() {
               ))
           )}
         </ul>
-        <NewDockittModal selectedProject="dockitt" />
       </main>
+      {/*  */}
       {/* Mobile View */}
+      {/*  */}
       <main className="lg:hidden flex-1 flex flex-col justify-center gap-y-4 gap-x-4">
         <h2 className="italic text-2xl text-red-600">
           Backlog -{" "}
@@ -511,9 +511,6 @@ export default async function KanbanPage() {
               ))
           )}
         </ul>
-        <div className="flex justify-center">
-          <NewDockittModal selectedProject="dockitt" />
-        </div>
       </main>
     </>
   );

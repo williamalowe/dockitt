@@ -14,7 +14,7 @@ export default async function DashboardPage() {
   }
 //   testing
   return (
-    <main className="flex-1 flex justify-center">
+    <main className="flex flex-col justify-center">
     </main>
   );
 }

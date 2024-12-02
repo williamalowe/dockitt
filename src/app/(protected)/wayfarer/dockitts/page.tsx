@@ -1,4 +1,3 @@
-import NewDockittModal from "@/components/NewDockittModal";
 import UpdateStatusBtns from "@/components/UpdateStatusBtns";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
@@ -142,7 +141,6 @@ export default async function DockittsPage() {
           </tbody>
         </table>
       </div>
-      <NewDockittModal selectedProject="wayfarer"/>
     </main>  
   );
 }

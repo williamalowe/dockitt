@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Simple Task Management",
 };
 
-const inter = Inter({
+const font = Montserrat({
   weight: "400",
   subsets: ["latin"]
 })
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="corporate">
       <body
-        className={`${inter.className} min-h-screen antialiased`}
+        className={`${font.className} min-h-screen antialiased`}
       >
         {children}
       </body>
