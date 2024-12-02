@@ -18,7 +18,7 @@ const NewDockittForm = ({ selectedProject }: {
       }}
     >
       <label className="input input-bordered flex items-center gap-2 w-full max-w-xs">
-        <input type="text" className="grow" placeholder="Enter Task" id="task" name="task" required/>
+        <input type="text" className="grow" placeholder="Enter Dockitt Title" id="task" name="task" required/>
         <input type="text" className="hidden" id="project" name="project" readOnly value={selectedProject} />
       </label>
       <select
@@ -36,11 +36,11 @@ const NewDockittForm = ({ selectedProject }: {
         <option value="Critical">Critical</option>
       </select>
       <label className="input input-bordered flex items-center gap-2 w-full max-w-xs">
-        <input type="text" className="grow" placeholder="Tag" id="tag" name="tag"/>
+        <input type="text" className="grow" placeholder="Tag (optional)" id="tag" name="tag"/>
       </label>
       <textarea
         className="textarea textarea-bordered w-full max-w-xs"
-        placeholder="Description"
+        placeholder="Dockitt Description"
         id="description" name="description"
       ></textarea>
       <button type="submit" className="btn btn-primary">
