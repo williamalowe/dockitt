@@ -4,7 +4,7 @@ import { createClient } from "@/utils/supabase/server";
 import { revalidatePath } from "next/cache";
 
 // // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function addDockitt(formData: FormData) {
+export async function addNote(noteData: FormData) {
   const supabase = await createClient();
 
   const {
@@ -12,20 +12,20 @@ export async function addDockitt(formData: FormData) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { error } = await supabase
-    .from("notes")
-    .insert([
-      {
-        id: Date.now(),
-        // created_at: formData.get("task") as string,
-        author: data.user.email,
-        message: formData.get("tag"),
-      },
-    ])
-    .select();
-  if (error) {
-    throw new Error(error.message);
+  if (user) {
+    const { error } = await supabase
+      .from("notes")
+      .insert([
+        {
+          id: Date.now(),
+          author: user.email,
+          message: noteData.get("message"),
+        },
+      ])
+      .select();
+    if (error) {
+      throw new Error(error.message);
+    }
   }
-
   revalidatePath("/");
 }

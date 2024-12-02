@@ -28,14 +28,14 @@ const UpdateStatusBtns = ({
       {btnGroup === 1 ? (
         <div className="card-actions justify-end">
           <button
-            className="btn btn-sm hover:bg-red-500"
+            className="btn btn-xs lg:btn-sm hover:bg-red-500"
             onClick={() => updateDockittStatusCancelled({ id: id })}
           >
             {" "}
             <BsTrash2 />
           </button>
           <button
-            className="btn btn-sm text hover:bg-green-500"
+            className="btn btn-xs lg:btn-sm text hover:bg-green-500"
             onClick={() =>
               updateDockittStatusForward({ id: id, currentStatus: status })
             }
@@ -46,13 +46,13 @@ const UpdateStatusBtns = ({
       ) : btnGroup === 2 ? (
         <div className="card-actions justify-end">
           <button
-            className="btn btn-sm hover:bg-red-500"
+            className="btn btn-xs lg:btn-sm hover:bg-red-500"
             onClick={() => updateDockittStatusCancelled({ id: id })}
           >
             <BsX />
           </button>
           <button
-            className="btn btn-sm hover:bg-amber-500"
+            className="btn btn-xs lg:btn-sm hover:bg-amber-500"
             onClick={() =>
               updateDockittStatusBackwards({ id: id, currentStatus: status })
             }
@@ -60,7 +60,7 @@ const UpdateStatusBtns = ({
             <BsCaretLeftFill />
           </button>
           <button
-            className="btn btn-sm hover:bg-green-500"
+            className="btn btn-xs lg:btn-sm hover:bg-green-500"
             onClick={() =>
               updateDockittStatusForward({ id: id, currentStatus: status })
             }
@@ -71,7 +71,7 @@ const UpdateStatusBtns = ({
       ) : (
         <div className="card-actions justify-end">
           <button
-            className="btn btn-sm hover:bg-amber-500"
+            className="btn btn-xs lg:btn-sm hover:bg-amber-500"
             onClick={() =>
               updateDockittStatusBackwards({ id: id, currentStatus: status })
             }
@@ -79,7 +79,7 @@ const UpdateStatusBtns = ({
             <BsCaretLeftFill />
           </button>
           <button
-            className="btn btn-sm hover:bg-green-500"
+            className="btn btn-xs lg:btn-sm hover:bg-green-500"
             onClick={() => deleteDockitt({ id: id })}
           >
             <BsCheck />
