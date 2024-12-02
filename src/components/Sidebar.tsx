@@ -96,7 +96,7 @@ export default async function Sidebar({ selectedProject }: {
             </svg>{" "}
           </label>
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side z-50">
           <label
             htmlFor="my-drawer"
             aria-label="close sidebar"
