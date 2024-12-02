@@ -10,7 +10,7 @@ export default async function KanbanPage() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  const { data: dockitts } = await supabase.from("dockitts").select();
+  const { data: dockitts } = await supabase.from("dockitts").select().eq('project', 'dockitt');
 
   if (!user) {
     return redirect("/login");
