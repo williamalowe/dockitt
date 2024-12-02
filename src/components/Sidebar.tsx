@@ -25,11 +25,11 @@ const navLinks = [
     href: "/notes",
     icon: <AiOutlineForm />,
   },
-  {
-    header: "Dashboard",
-    href: "/dashboard",
-    icon: <AiOutlineLineChart />,
-  },
+  // {
+  //   header: "Dashboard",
+  //   href: "/dashboard",
+  //   icon: <AiOutlineLineChart />,
+  // },
 ];
 
 const dockittList = [
