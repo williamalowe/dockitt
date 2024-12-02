@@ -47,7 +47,6 @@ export default async function KanbanPage() {
                   key={dockitt.id}
                   className="relative hover:-rotate-2 transition"
                 >
-                  <div className="bg-red-500 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl" />
                   <div className="flex-1 card bg-base-100 max-w-full shadow-xl">
                     <div className="card-body relative">
                       {dockitt.tag && (
@@ -122,7 +121,6 @@ export default async function KanbanPage() {
                   key={dockitt.id}
                   className="relative hover:-rotate-2 transition"
                 >
-                  <div className="bg-yellow-500 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
                   <div className="flex-1 card bg-base-100 max-w-full shadow-xl">
                     <div className="card-body relative">
                       {dockitt.tag && (
@@ -196,7 +194,6 @@ export default async function KanbanPage() {
                   key={dockitt.id}
                   className="relative hover:-rotate-2 transition"
                 >
-                  <div className="bg-purple-500 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
                   <div className="flex-1 card bg-base-100 max-w-full shadow-xl">
                     <div className="card-body relative">
                       {dockitt.tag && (
@@ -270,7 +267,6 @@ export default async function KanbanPage() {
                   key={dockitt.id}
                   className="relative hover:-rotate-2 transition"
                 >
-                  <div className="bg-green-500 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
                   <div className="flex-1 card bg-base-100 max-w-full shadow-xl">
                     <div className="card-body relative">
                       {dockitt.tag && (
@@ -324,7 +320,7 @@ export default async function KanbanPage() {
       {/* Mobile View */}
       {/*  */}
       <main className="lg:hidden flex-1 flex flex-col justify-center gap-y-4 gap-x-4">
-        <h2 className="italic text-2xl text-red-600">
+        <h2 className="italic text-2xl text-red-500">
           Backlog -{" "}
           {dockitts?.filter((item) => item.status === "Backlog").length}
         </h2>
@@ -337,7 +333,6 @@ export default async function KanbanPage() {
               ?.filter((item) => item.status === "Backlog")
               .map((dockitt) => (
                 <li key={dockitt.id} className="relative">
-                  <div className="bg-red-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl" />
                   <div className="flex-1 card bg-base-100 w-[80vw] shadow-xl">
                     <div className="card-body relative">
                       {dockitt.tag && (
@@ -380,7 +375,7 @@ export default async function KanbanPage() {
               ))
           )}
         </ul>
-        <h2 className="italic text-2xl text-yellow-600">
+        <h2 className="italic text-2xl text-yellow-500">
           In Progress -{" "}
           {dockitts?.filter((item) => item.status === "In Progress").length}
         </h2>
@@ -393,7 +388,6 @@ export default async function KanbanPage() {
               ?.filter((item) => item.status === "In Progress")
               .map((dockitt) => (
                 <li key={dockitt.id} className="relative">
-                  <div className="bg-yellow-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
                   <div className="flex-1 card bg-base-100 w-[80vw] shadow-xl">
                     <div className="card-body relative">
                       {dockitt.tag && (
@@ -436,7 +430,7 @@ export default async function KanbanPage() {
               ))
           )}
         </ul>
-        <h2 className="italic text-2xl text-purple-600">
+        <h2 className="italic text-2xl text-purple-500">
           Under Review -{" "}
           {dockitts?.filter((item) => item.status === "Under Review").length}
         </h2>
@@ -449,7 +443,6 @@ export default async function KanbanPage() {
               ?.filter((item) => item.status === "Under Review")
               .map((dockitt) => (
                 <li key={dockitt.id} className="relative">
-                  <div className="bg-purple-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
                   <div className="flex-1 card bg-base-100 w-[80vw] shadow-xl">
                     <div className="card-body relative">
                       {dockitt.tag && (
@@ -492,7 +485,7 @@ export default async function KanbanPage() {
               ))
           )}
         </ul>
-        <h2 className="italic text-2xl text-emerald-600">
+        <h2 className="italic text-2xl text-green-500">
           Completed -{" "}
           {dockitts?.filter((item) => item.status === "Completed").length}
         </h2>
@@ -505,7 +498,6 @@ export default async function KanbanPage() {
               ?.filter((item) => item.status === "Completed")
               .map((dockitt) => (
                 <li key={dockitt.id} className="relative">
-                  <div className="bg-emerald-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
                   <div className="flex-1 card bg-base-100 w-[80vw] shadow-xl">
                     <div className="card-body relative">
                       {dockitt.tag && (

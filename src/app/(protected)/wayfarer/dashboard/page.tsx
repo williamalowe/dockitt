@@ -12,7 +12,6 @@ export default async function DashboardPage() {
   if (!user) {
     return redirect("/login");
   }
-//   testing
   return (
     <main className="flex flex-col justify-center">
     </main>

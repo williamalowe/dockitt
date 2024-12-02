@@ -16,7 +16,7 @@ export default async function Sidebar({
     return (
     <>
       {/* Normal View */}
-      <div className="flex flex-col min-h-[calc(100vh-80px)] max-w-[80px] p-2 h-full btn rounded-none items-start justify-start">
+      <div className="hidden lg:flex flex-col min-h-[calc(100vh-80px)] max-w-[80px] p-2 h-full btn rounded-none items-start justify-start">
         <ul className="flex flex-col gap-y-2">
             <li>
                 <Link href={'./backlog'}>

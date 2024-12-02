@@ -7,7 +7,6 @@ const NewDockittForm = ({ selectedProject }: {
   selectedProject: string
 }) => {
   const ref = useRef<HTMLFormElement>(null);
-  console.log(selectedProject);
   return (
     <form
       className="flex flex-col outline-none items-center gap-2"

@@ -9,7 +9,6 @@ const NewDockittModal = ({ selectedProject }: {
       <label htmlFor="my_modal_6" className="z-20 btn aspect-square text-xl hover:scale-110 transition">
         <BsPlus />
       </label>
-
       <input type="checkbox" id="my_modal_6" className="modal-toggle " />
       <div className="modal" role="dialog">
         <div className="modal-box">

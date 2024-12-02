@@ -7,13 +7,11 @@ export default async function DashboardPage() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  const { data: dockitts } = await supabase.from("dockitts").select();
+  // const { data: dockitts } = await supabase.from("dockitts").select();
 
   if (!user) {
     return redirect("/login");
   }
-//   testing
-console.log(dockitts)
 
   return (
     <main className="flex-1 flex justify-center">
