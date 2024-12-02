@@ -9,9 +9,11 @@ const layout = ({ children }: {
 }) => {
   return (
     <div className='min-h-screen flex flex-col px-2 lg:px-8 py-4'>
-      <div className='flex'>
-        <Sidebar selectedProject='dockitt'/>
-        <ProjectDropdown />
+      <div className='flex items-center'>
+        <div className='flex items-center'>
+          <Sidebar selectedProject='dockitt'/>
+          <ProjectDropdown />
+        </div>
         <Welcome />
       </div>
         {children}

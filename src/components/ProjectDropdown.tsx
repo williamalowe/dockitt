@@ -1,22 +1,23 @@
 "use client";
 import Link from "next/link";
+import { BsCaretDownFill } from "react-icons/bs";
 
 const projects = [
   {
-    title: "Wayfarer",
-    href: "/wayfarer/dockitts",
-  },
-  {
     title: "Dockitt",
     href: "/dockitt/dockitts",
+  },
+  {
+    title: "Wayfarer",
+    href: "/wayfarer/dockitts",
   },
 ];
 
 const ProjectDropdown = () => {
   return (
-    <div className="flex-1 flex dropdown w-[160px] justify-center">
-      <div tabIndex={0} role="button" className="btn m-1 w-[160px]">
-        Project Boards
+    <div className="dropdown">
+      <div tabIndex={0} role="button" className="btn m-1">
+        Project Boards <BsCaretDownFill />
       </div>
       <ul
         tabIndex={0}

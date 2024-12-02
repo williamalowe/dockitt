@@ -8,7 +8,7 @@ export default async function NotesPage() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  const { data: notes } = await supabase.from("notes").select().eq('project', 'wayfarer');
+  const { data: notes } = await supabase.from("notes").select();
 
   if (!user) {
     return redirect("/login");

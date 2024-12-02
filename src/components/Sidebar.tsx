@@ -21,8 +21,8 @@ const navLinks = [
     icon: <AiOutlineAppstoreAdd />,
   },
   {
-    header: "Notes",
-    href: "./notes",
+    header: "Message Board",
+    href: "./message-board",
     icon: <AiOutlineForm />,
   },
   {
