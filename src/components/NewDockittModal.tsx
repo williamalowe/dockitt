@@ -6,7 +6,7 @@ const NewDockittModal = ({ selectedProject }: {
 }) => {
   return (
     <>
-      <label htmlFor="my_modal_6" className="z-20 btn text-xl hover:scale-110 transition">
+      <label htmlFor="my_modal_6" className="z-20 btn aspect-square text-xl hover:scale-110 transition">
         <BsPlus />
       </label>
 
@@ -18,7 +18,7 @@ const NewDockittModal = ({ selectedProject }: {
           </h3>
           <NewDockittForm selectedProject={selectedProject}/>
           <div className="modal-action">
-            <label htmlFor="my_modal_6" className="btn text-xl hover:scale-110 transition">
+            <label htmlFor="my_modal_6" className="btn aspect-square text-xl hover:scale-110 transition">
               <BsX />
             </label>
           </div>

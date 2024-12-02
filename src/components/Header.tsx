@@ -54,7 +54,7 @@ export default async function Header({
           {navItems.map((item) => (
             <li key={item.href}>
               <Link href={item.href}>
-                <button className="btn text-xl hover:scale-110 transition">
+                <button className="btn aspect-square text-xl hover:scale-110 transition">
                   {item.icon}
                 </button>
               </Link>

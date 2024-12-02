@@ -1,154 +1,60 @@
-import Link from "next/link";
-import {
-  AiOutlineAppstoreAdd,
-  AiOutlineForm,
-  AiOutlineLineChart,
-  AiOutlineUnorderedList,
-} from "react-icons/ai";
-import ThemeSwitcher from "./ThemeSwitcher";
-import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
+import Link from "next/link";
 
-const navLinks = [
-  {
-    header: "All Tasks",
-    href: "./dockitts",
-    icon: <AiOutlineUnorderedList />,
-  },
-  {
-    header: "Kanban Board",
-    href: "./kanban",
-    icon: <AiOutlineAppstoreAdd />,
-  },
-  {
-    header: "Message Board",
-    href: "./message-board",
-    icon: <AiOutlineForm />,
-  },
-  {
-    header: "Dashboard",
-    href: "./dashboard",
-    icon: <AiOutlineLineChart />,
-  },
-];
-
-const dockittList = [
-  {
-    header: "Backlog",
-    href: "/",
-    color: "bg-red-600",
-    count: 2,
-  },
-  {
-    header: "In Progress",
-    href: "/",
-    color: "bg-yellow-600",
-    count: 2,
-  },
-  {
-    header: "Under Review",
-    href: "/",
-    color: "bg-purple-600",
-    count: 2,
-  },
-  {
-    header: "Completed",
-    href: "/",
-    color: "bg-emerald-600",
-    count: 2,
-  },
-  {
-    header: "Cancelled",
-    href: "/",
-    color: "bg-red-800",
-    count: 2,
-  },
-];
-
-export default async function Sidebar({ selectedProject }: {
-  selectedProject: string,
-}) {
-  const supabase = await createClient();
-
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  const { data: dockitts } = await supabase.from("dockitts").select().eq('project', selectedProject);
-
-  if (!user) {
-    return redirect("/login");
-  }
-
-  return (
+export default async function Sidebar({
+    currentProject,
+  }: {
+    currentProject: string;
+  }) {
+    const supabase = await createClient();
+  
+    const { data: dockitts } = await supabase
+    .from("dockitts")
+    .select()
+    .eq("project", currentProject);
+  
+    return (
     <>
-      <div className="flex-1 drawer z-20">
-        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content">
-          <label htmlFor="my-drawer" className="btn btn-ghost drawer-button">
-            <svg
-              className="swap-off fill-current"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 512 512"
-            >
-              <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
-            </svg>{" "}
-          </label>
-        </div>
-        <div className="drawer-side z-50">
-          <label
-            htmlFor="my-drawer"
-            aria-label="close sidebar"
-            className="drawer-overlay"
-          ></label>
-          <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-            {/* Sidebar content here */}
-            <h5 className="font-bold">Welcome to Dockitt. </h5>
-            <p className="mt-6 font-bold">Views</p>
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className="flex">
-                  {link.header} <span className="ml-auto">{link.icon}</span>
+      {/* Normal View */}
+      <div className="flex flex-col min-h-[calc(100vh-80px)] max-w-[80px] p-2 h-full btn rounded-none items-start justify-start">
+        <ul className="flex flex-col gap-y-2">
+            <li>
+                <Link href={'./backlog'}>
+                <button className="btn aspect-square w-full text-black/80 bg-red-500 hover:bg-red-500 text-xl hover:scale-110 transition">
+                        {dockitts?.filter((dockitt) => dockitt.status === "Backlog").length}
+                    </button>
                 </Link>
-              </li>
-            ))}
-            <p className="mt-6 font-bold">Dockitts</p>
-            {dockittList.map((dockittItem) => (
-              <li key={dockittItem.header}>
-                <Link href={dockittItem.href} className="flex">
-                  <div className={`w-4 h-4 rounded ${dockittItem.color}`} />
-                  {dockittItem.header}{" "}
-                  <span className="ml-auto">
-                    {dockittItem.header === "Backlog"
-                      ? dockitts?.filter(
-                          (dockitt) => dockitt.status === "Backlog"
-                        ).length
-                      : dockittItem.header === "In Progress"
-                      ? dockitts?.filter(
-                          (dockitt) => dockitt.status === "In Progress"
-                        ).length
-                      : dockittItem.header === "Under Review"
-                      ? dockitts?.filter(
-                          (dockitt) => dockitt.status === "Under Review"
-                        ).length
-                      : dockittItem.header === "Completed"
-                      ? dockitts?.filter(
-                          (dockitt) => dockitt.status === "Completed"
-                        ).length
-                      : dockitts?.filter(
-                          (dockitt) => dockitt.status === "Cancelled"
-                        ).length}
-                  </span>
-                </Link>
-              </li>
-            ))}
-            <li className="mt-auto">
-              <ThemeSwitcher />
             </li>
-          </ul>
-        </div>
+            <li>
+                <Link href={'./in-progress'}>
+                <button className="btn aspect-square w-full text-black/80 bg-yellow-500 hover:bg-yellow-500 text-xl hover:scale-110 transition">
+                        {dockitts?.filter((dockitt) => dockitt.status === "In Progress").length}
+                    </button>
+                </Link>
+            </li>
+            <li>
+                <Link href={'./under-review'}>
+                <button className="btn aspect-square w-full text-black/80 bg-purple-500 hover:bg-purple-500 text-xl hover:scale-110 transition">
+                        {dockitts?.filter((dockitt) => dockitt.status === "Under Review").length}
+                    </button>
+                </Link>
+            </li>
+            <li>
+                <Link href={'./completed'}>
+                <button className="btn aspect-square w-full text-black/80 bg-green-500 hover:bg-green-500 text-xl hover:scale-110 transition">
+                        {dockitts?.filter((dockitt) => dockitt.status === "Completed").length}
+                    </button>
+                </Link>
+            </li>
+            <li>
+                <Link href={'./cancelled'}>
+                <button className="btn aspect-square w-full text-black/80 bg-rose-600 hover:bg-rose-600 text-xl hover:scale-110 transition">
+                        {dockitts?.filter((dockitt) => dockitt.status === "Cancelled").length}
+                    </button>
+                </Link>
+            </li>
+        </ul>
       </div>
     </>
   );
-}
+};
