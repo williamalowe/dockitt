@@ -17,7 +17,7 @@ const ProjectDropdown = () => {
   return (
     <div className="dropdown flex-1">
       <div tabIndex={0} role="button" className="btn m-1 w-[160px]">
-        Project Boards <BsCaretDownFill />
+        Switch Projects <BsCaretDownFill />
       </div>
       <ul
         tabIndex={0}
