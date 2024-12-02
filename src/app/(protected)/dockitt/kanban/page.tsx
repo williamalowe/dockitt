@@ -10,7 +10,10 @@ export default async function KanbanPage() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  const { data: dockitts } = await supabase.from("dockitts").select().eq('project', 'dockitt');
+  const { data: dockitts } = await supabase
+    .from("dockitts")
+    .select()
+    .eq("project", "dockitt");
 
   if (!user) {
     return redirect("/login");
@@ -52,11 +55,12 @@ export default async function KanbanPage() {
                       </h2>
                       <p>{dockitt.description}</p>
                       <p className="mt-4 text-xs tracking-wide">
-                        Created by:{" "}
+                        Submitted by:{" "}
                         <span className="italic font-bold">
                           {dockitt.created_by}
                         </span>
                       </p>
+
                       <div className="flex items-center">
                         <p>
                           Priority:
@@ -117,7 +121,7 @@ export default async function KanbanPage() {
                       </h2>{" "}
                       <p>{dockitt.description}</p>
                       <p className="mt-4 text-xs tracking-wide">
-                        Created by:{" "}
+                        Submitted by:{" "}
                         <span className="italic font-bold">
                           {dockitt.created_by}
                         </span>
@@ -182,7 +186,7 @@ export default async function KanbanPage() {
                       </h2>{" "}
                       <p>{dockitt.description}</p>
                       <p className="mt-4 text-xs tracking-wide">
-                        Created by:{" "}
+                        Submitted by:{" "}
                         <span className="italic font-bold">
                           {dockitt.created_by}
                         </span>
@@ -247,7 +251,7 @@ export default async function KanbanPage() {
                       </h2>{" "}
                       <p>{dockitt.description}</p>
                       <p className="mt-4 text-xs tracking-wide">
-                        Created by:{" "}
+                        Submitted by:{" "}
                         <span className="italic font-bold">
                           {dockitt.created_by}
                         </span>
