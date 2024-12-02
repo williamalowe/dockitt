@@ -223,7 +223,7 @@ export default async function KanbanPage() {
             Completed -{" "}
             {dockitts?.filter((item) => item.status === "Completed").length}
           </h2>
-          {dockitts?.filter((item) => item.status === "Backlog").length ===
+          {dockitts?.filter((item) => item.status === "Completed").length ===
           0 ? (
             <p>No dockitts completed.</p>
           ) : (
@@ -460,7 +460,7 @@ export default async function KanbanPage() {
           {dockitts?.filter((item) => item.status === "Completed").length}
         </h2>
         <ul className="flex-1 flex gap-x-2 max-w-[100vw] overflow-scroll">
-          {dockitts?.filter((item) => item.status === "Backlog").length ===
+          {dockitts?.filter((item) => item.status === "Completed").length ===
           0 ? (
             <p>No dockitts completed.</p>
           ) : (
