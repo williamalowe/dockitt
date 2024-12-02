@@ -2,7 +2,7 @@ import Link from "next/link";
 import {
   AiOutlineAppstoreAdd,
   AiOutlineForm,
-  AiOutlineLineChart,
+  // AiOutlineLineChart,
   AiOutlineUnorderedList,
 } from "react-icons/ai";
 import ThemeSwitcher from "./ThemeSwitcher";
@@ -65,7 +65,7 @@ const dockittList = [
   },
 ];
 
-export default async function Sidebar(){
+export default async function Sidebar() {
   const supabase = await createClient();
 
   const {
@@ -76,7 +76,7 @@ export default async function Sidebar(){
   if (!user) {
     return redirect("/login");
   }
-  
+
   return (
     <>
       <div className="drawer z-20">
@@ -118,15 +118,25 @@ export default async function Sidebar(){
                   <div className={`w-4 h-4 rounded ${dockittItem.color}`} />
                   {dockittItem.header}{" "}
                   <span className="ml-auto">
-                    {
-                      dockittItem.header === "Backlog" ? dockitts?.filter((dockitt) => dockitt.status === "Backlog").length :
-                      dockittItem.header === "In Progress" ? dockitts?.filter((dockitt) => dockitt.status === "In Progress").length :
-                      dockittItem.header === "Under Review" ? dockitts?.filter((dockitt) => dockitt.status === "Under Review").length :
-                      dockittItem.header === "Completed" ? dockitts?.filter((dockitt) => dockitt.status === "Completed").length :
-                      dockitts?.filter((dockitt) => dockitt.status === "Cancelled").length
-
-                    }
-
+                    {dockittItem.header === "Backlog"
+                      ? dockitts?.filter(
+                          (dockitt) => dockitt.status === "Backlog"
+                        ).length
+                      : dockittItem.header === "In Progress"
+                      ? dockitts?.filter(
+                          (dockitt) => dockitt.status === "In Progress"
+                        ).length
+                      : dockittItem.header === "Under Review"
+                      ? dockitts?.filter(
+                          (dockitt) => dockitt.status === "Under Review"
+                        ).length
+                      : dockittItem.header === "Completed"
+                      ? dockitts?.filter(
+                          (dockitt) => dockitt.status === "Completed"
+                        ).length
+                      : dockitts?.filter(
+                          (dockitt) => dockitt.status === "Cancelled"
+                        ).length}
                   </span>
                 </Link>
               </li>
@@ -139,4 +149,4 @@ export default async function Sidebar(){
       </div>
     </>
   );
-};
+}
