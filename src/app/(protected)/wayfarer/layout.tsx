@@ -2,9 +2,6 @@ import Header from "@/components/Header";
 import MobileHeader from "@/components/MobileHeader";
 import MobileNav from "@/components/MobileNav";
 import Sidebar from "@/components/Sidebar";
-// import ProjectDropdown from "@/components/ProjectDropdown";
-// import Sidebar from "@/components/Sidebar";
-// import Welcome from "@/components/Welcome";
 import React from "react";
 
 const layout = ({ children }: { children: React.ReactNode }) => {

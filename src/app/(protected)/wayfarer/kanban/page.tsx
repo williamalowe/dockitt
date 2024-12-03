@@ -320,13 +320,21 @@ export default async function KanbanPage() {
           )}
         </ul>
       </main>
+      {/*  */}
       {/* Mobile View */}
-      <main className="lg:hidden flex-1 flex flex-col justify-center gap-y-4 gap-x-4">
-        <h2 className="italic text-2xl text-red-600">
-          Backlog -{" "}
-          {dockitts?.filter((item) => item.status === "Backlog").length}
-        </h2>
-        <ul className="flex-1 flex gap-x-2 max-w-[100vw] overflow-scroll">
+      {/*  */}
+      <main className="lg:hidden flex-1 flex flex-col justify-center py-2 px-1 gap-y-4 gap-x-4">
+        <div className="card bg-red-500 shadow-xl text-black/80">
+          <div className="card-body py-4">
+            <h2 className="card-title flex">
+              Backlog
+              <span className="ml-auto">
+                {dockitts?.filter((item) => item.status === "Backlog").length}
+              </span>
+            </h2>
+          </div>
+        </div>
+        <ul className="flex-1 flex gap-x-2 max-w-[100vw] overflow-scroll py-2">
           {dockitts?.filter((item) => item.status === "Backlog").length ===
           0 ? (
             <p>No dockitts remaining. Hooray!</p>
@@ -335,7 +343,6 @@ export default async function KanbanPage() {
               ?.filter((item) => item.status === "Backlog")
               .map((dockitt) => (
                 <li key={dockitt.id} className="relative">
-                  <div className="bg-red-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl" />
                   <div className="flex-1 card bg-base-100 w-[80vw] shadow-xl">
                     <div className="card-body relative">
                       {dockitt.tag && (
@@ -378,11 +385,20 @@ export default async function KanbanPage() {
               ))
           )}
         </ul>
-        <h2 className="italic text-2xl text-yellow-600">
-          In Progress -{" "}
-          {dockitts?.filter((item) => item.status === "In Progress").length}
-        </h2>
-        <ul className="flex-1 flex gap-x-2 max-w-[100vw] overflow-scroll">
+        <div className="card bg-yellow-500 shadow-xl text-black/80">
+          <div className="card-body py-4">
+            <h2 className="card-title flex">
+              In Progress
+              <span className="ml-auto">
+                {
+                  dockitts?.filter((item) => item.status === "In Progress")
+                    .length
+                }
+              </span>
+            </h2>
+          </div>
+        </div>
+        <ul className="flex-1 flex gap-x-2 max-w-[100vw] overflow-scroll py-2">
           {dockitts?.filter((item) => item.status === "In Progress").length ===
           0 ? (
             <p>No dockitts remaining. Hooray!</p>
@@ -391,7 +407,6 @@ export default async function KanbanPage() {
               ?.filter((item) => item.status === "In Progress")
               .map((dockitt) => (
                 <li key={dockitt.id} className="relative">
-                  <div className="bg-yellow-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
                   <div className="flex-1 card bg-base-100 w-[80vw] shadow-xl">
                     <div className="card-body relative">
                       {dockitt.tag && (
@@ -434,11 +449,20 @@ export default async function KanbanPage() {
               ))
           )}
         </ul>
-        <h2 className="italic text-2xl text-purple-600">
-          Under Review -{" "}
-          {dockitts?.filter((item) => item.status === "Under Review").length}
-        </h2>
-        <ul className="flex-1 flex gap-x-2 max-w-[100vw] overflow-scroll">
+        <div className="card bg-purple-500 shadow-xl text-black/80">
+          <div className="card-body py-4">
+            <h2 className="card-title flex">
+              Under Review
+              <span className="ml-auto">
+                {
+                  dockitts?.filter((item) => item.status === "Under Review")
+                    .length
+                }
+              </span>
+            </h2>
+          </div>
+        </div>
+        <ul className="flex-1 flex gap-x-2 max-w-[100vw] overflow-scroll py-2">
           {dockitts?.filter((item) => item.status === "Under Review").length ===
           0 ? (
             <p>No dockitts remaining. Hooray!</p>
@@ -447,7 +471,6 @@ export default async function KanbanPage() {
               ?.filter((item) => item.status === "Under Review")
               .map((dockitt) => (
                 <li key={dockitt.id} className="relative">
-                  <div className="bg-purple-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
                   <div className="flex-1 card bg-base-100 w-[80vw] shadow-xl">
                     <div className="card-body relative">
                       {dockitt.tag && (
@@ -490,11 +513,17 @@ export default async function KanbanPage() {
               ))
           )}
         </ul>
-        <h2 className="italic text-2xl text-emerald-600">
-          Completed -{" "}
-          {dockitts?.filter((item) => item.status === "Completed").length}
-        </h2>
-        <ul className="flex-1 flex gap-x-2 max-w-[100vw] overflow-scroll">
+        <div className="card bg-green-500 shadow-xl text-black/80">
+          <div className="card-body py-4">
+            <h2 className="card-title flex">
+              Completed
+              <span className="ml-auto">
+                {dockitts?.filter((item) => item.status === "Completed").length}
+              </span>
+            </h2>
+          </div>
+        </div>
+        <ul className="flex-1 flex gap-x-2 max-w-[100vw] overflow-scroll py-2">
           {dockitts?.filter((item) => item.status === "Completed").length ===
           0 ? (
             <p>No dockitts completed.</p>
@@ -503,7 +532,6 @@ export default async function KanbanPage() {
               ?.filter((item) => item.status === "Completed")
               .map((dockitt) => (
                 <li key={dockitt.id} className="relative">
-                  <div className="bg-emerald-600 w-4 h-4 rounded-full absolute top-2 left-4 z-10 shadow-xl"></div>
                   <div className="flex-1 card bg-base-100 w-[80vw] shadow-xl">
                     <div className="card-body relative">
                       {dockitt.tag && (
