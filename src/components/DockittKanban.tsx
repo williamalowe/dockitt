@@ -453,11 +453,11 @@ export default function DockittKanban({ dockitts }: { dockitts: Dockitt[] }) {
                               </span>
                             )}
                           </p>
-                          {/* <UpdateStatusBtns
-                            btnGroup={3}
+                          <UpdateStatusBtns
+                            btnGroup={4}
                             id={dockitt.id}
-                            status="Completed"
-                          /> */}
+                            status="Cancelled"
+                          />
                         </div>
                       </div>
                     </div>
@@ -771,7 +771,7 @@ export default function DockittKanban({ dockitts }: { dockitts: Dockitt[] }) {
                           )}
                         </p>
                         <UpdateStatusBtns
-                          btnGroup={3}
+                          btnGroup={4}
                           id={dockitt.id}
                           status="Cancelled"
                         />

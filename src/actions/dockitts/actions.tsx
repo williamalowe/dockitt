@@ -23,7 +23,7 @@ export async function addDockitt(formData: FormData) {
         tag: formData.get("tag") as string,
         description: formData.get("description") as string,
         created_by: user?.email,
-        project: formData.get("project") as string
+        project: formData.get("project") as string,
       },
     ])
     .select();
@@ -50,7 +50,9 @@ export async function updateDockittStatusForward({
           ? "In Progress"
           : currentStatus === "In Progress"
           ? "Under Review"
-          : "Completed",
+          : currentStatus === "Under Review"
+          ? "Completed"
+          : "Backlog",
     })
     .eq("id", id) // where 'specificId' is the ID you're targeting
     .select();

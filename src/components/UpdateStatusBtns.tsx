@@ -32,7 +32,7 @@ const UpdateStatusBtns = ({
             onClick={() => updateDockittStatusCancelled({ id: id })}
           >
             {" "}
-            <BsTrash2 />
+            <BsX />
           </button>
           <button
             className="btn btn-xs lg:btn-sm text hover:bg-green-500"
@@ -68,7 +68,7 @@ const UpdateStatusBtns = ({
             <BsCaretRightFill />
           </button>
         </div>
-      ) : (
+      ) : btnGroup === 3 ?(
         <div className="card-actions justify-end">
           <button
             className="btn btn-xs lg:btn-sm hover:bg-amber-500"
@@ -85,7 +85,23 @@ const UpdateStatusBtns = ({
             <BsCheck />
           </button>
         </div>
-      )}
+      ): <div className="card-actions justify-end">
+      <button
+        className="btn btn-xs lg:btn-sm hover:bg-green-500"
+        onClick={() =>
+          updateDockittStatusForward({ id: id, currentStatus: status })
+        }
+      >
+        <BsCaretLeftFill />
+      </button>
+      <button
+        className="btn btn-xs lg:btn-sm hover:bg-rose-600"
+        onClick={() => deleteDockitt({ id: id })}
+      >
+        <BsTrash2 />
+      </button>
+    </div>
+      }
     </>
   );
 };
