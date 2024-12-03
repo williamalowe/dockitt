@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   AiFillMessage,
   AiOutlineAppstoreAdd,
-  AiOutlineLineChart,
+  // AiOutlineLineChart,
   AiOutlineUnorderedList,
 } from "react-icons/ai";
 import ProjectDropdown from "./ProjectDropdown";
@@ -25,10 +25,10 @@ const navItems = [
     href: "./message-board",
     icon: <AiFillMessage />,
   },
-  {
-    href: "./dashboard",
-    icon: <AiOutlineLineChart />,
-  },
+  // {
+  //   href: "./dashboard",
+  //   icon: <AiOutlineLineChart />,
+  // },
 ];
 
 export default async function Header({

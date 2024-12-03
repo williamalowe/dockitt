@@ -15,10 +15,10 @@ const navItems = [
       href: "./message-board",
       icon: <AiFillMessage />,
     },
-    {
-      href: "./dashboard",
-      icon: <AiOutlineLineChart />,
-    },
+    // {
+    //   href: "./dashboard",
+    //   icon: <AiOutlineLineChart />,
+    // },
   ];
   
 const MobileNav = ({ currentProject }: {
