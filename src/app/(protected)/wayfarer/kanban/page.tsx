@@ -6,26 +6,15 @@ import { BsExclamationCircleFill } from "react-icons/bs";
 export default async function KanbanPage() {
   const supabase = await createClient();
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
   const { data: dockitts } = await supabase
     .from("dockitts")
     .select()
     .eq("project", "wayfarer");
 
-  if (!user) {
-    return redirect("/login");
-  }
-
   return (
     <>
       <main className="hidden flex-1 lg:flex justify-center gap-y-4 gap-x-4">
         <ul className="flex-1 flex flex-col gap-y-2 ">
-          {/* <h2 className="italic text-2xl text-red-600">
-            Backlog -{" "}
-            {dockitts?.filter((item) => item.status === "Backlog").length}
-          </h2> */}
           <div className="card bg-red-500 shadow-xl text-black/80">
             <div className="card-body py-4">
               <h2 className="card-title flex">

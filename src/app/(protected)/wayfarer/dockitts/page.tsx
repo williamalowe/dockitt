@@ -1,21 +1,16 @@
 import UpdateStatusBtns from "@/components/UpdateStatusBtns";
 import { createClient } from "@/utils/supabase/server";
-import { redirect } from "next/navigation";
 
 export default async function DockittsPage() {
   const supabase = await createClient();
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  const { data: dockitts } = await supabase.from("dockitts").select().eq('project', 'wayfarer');
-
-  if (!user) {
-    return redirect("/login");
-  }
+  const { data: dockitts } = await supabase
+    .from("dockitts")
+    .select()
+    .eq("project", "wayfarer");
 
   return (
-      <main className="flex-1 flex justify-center">
+    <main className="flex-1 flex justify-center">
       <div className="overflow-x-auto w-full">
         {/* normal view */}
         <table className="hidden lg:table table table-zebra">
@@ -141,6 +136,6 @@ export default async function DockittsPage() {
           </tbody>
         </table>
       </div>
-    </main>  
+    </main>
   );
 }

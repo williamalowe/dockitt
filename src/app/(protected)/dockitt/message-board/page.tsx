@@ -4,15 +4,7 @@ import { redirect } from "next/navigation";
 
 export default async function NotesPage() {
   const supabase = await createClient();
-
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
   const { data: notes } = await supabase.from("notes").select();
-
-  if (!user) {
-    return redirect("/login");
-  }
 
   return (
     <main className="flex-1 flex flex-col items-center">

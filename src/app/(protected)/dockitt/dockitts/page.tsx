@@ -1,21 +1,13 @@
 import UpdateStatusBtns from "@/components/UpdateStatusBtns";
 import { createClient } from "@/utils/supabase/server";
-import { redirect } from "next/navigation";
 
 export default async function DockittsPage() {
   const supabase = await createClient();
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
   const { data: dockitts } = await supabase
     .from("dockitts")
     .select()
     .eq("project", "dockitt");
-
-  if (!user) {
-    return redirect("/login");
-  }
 
   return (
     <main className="flex-1 flex justify-center">

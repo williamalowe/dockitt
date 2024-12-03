@@ -1,23 +1,14 @@
 import UpdateStatusBtns from "@/components/UpdateStatusBtns";
 import { createClient } from "@/utils/supabase/server";
-import { redirect } from "next/navigation";
 import { BsExclamationCircleFill } from "react-icons/bs";
 
 export default async function KanbanPage() {
   const supabase = await createClient();
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
   const { data: dockitts } = await supabase
     .from("dockitts")
     .select()
     .eq("project", "dockitt");
-
-  if (!user) {
-    return redirect("/login");
-  }
-
   return (
     <>
       <main className="hidden flex-1 lg:flex justify-center gap-y-4 gap-x-4">
