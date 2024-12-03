@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AiFillMessage, AiOutlineAppstoreAdd, AiOutlineLineChart, AiOutlineUnorderedList } from "react-icons/ai";
+import { AiFillMessage, AiOutlineAppstoreAdd, AiOutlineUnorderedList } from "react-icons/ai";
 import NewDockittModal from "./NewDockittModal";
 
 const navItems = [
