@@ -1,6 +1,5 @@
 import UpdateStatusBtns from "@/components/UpdateStatusBtns";
 import { createClient } from "@/utils/supabase/server";
-import { redirect } from "next/navigation";
 import { BsExclamationCircleFill } from "react-icons/bs";
 
 export default async function KanbanPage() {
