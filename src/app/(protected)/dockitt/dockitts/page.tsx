@@ -75,9 +75,11 @@ export default async function DockittsPage() {
                         status="Completed"
                       />
                     ) : (
-                      <p className="uppercase text-end text-red-500">
-                        Cancelled
-                      </p>
+                      <UpdateStatusBtns
+                          btnGroup={4}
+                          id={dockitt.id}
+                          status="Cancelled"
+                        />
                     )}
                   </th>
                 </tr>
@@ -126,9 +128,11 @@ export default async function DockittsPage() {
                         status="Completed"
                       />
                     ) : (
-                      <p className="uppercase text-end text-red-500">
-                        Cancelled
-                      </p>
+                      <UpdateStatusBtns
+                        btnGroup={4}
+                        id={dockitt.id}
+                        status="Cancelled"
+                      />
                     )}
                   </th>
                 </tr>
