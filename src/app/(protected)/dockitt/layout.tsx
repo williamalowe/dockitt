@@ -22,13 +22,15 @@ const layout = ({ children }: { children: React.ReactNode }) => {
         </div>
       </div>
       {/*  */}
-      {/* Normal View */}
+      {/* Mobile View */}
       {/*  */}
       <div className="flex flex-col min-h-screen lg:hidden">
-        <div className="mb-[64px]">
-        <MobileHeader currentProject="dockitt" />
-        {children}
-        </div>
+          <div className="fixed z-30 w-full top-0">
+            <MobileHeader currentProject="dockitt" />
+          </div>
+          <div className="mb-[64px] mt-[104px]">
+          {children}
+          </div>
         <div className="fixed bottom-0 w-full">
           <MobileNav currentProject="dockitt"/>
         </div>
