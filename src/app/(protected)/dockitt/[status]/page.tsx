@@ -1,9 +1,12 @@
-"use client";
-import { usePathname } from "next/navigation";
+import DockittList from "@/components/DockittList";
+import { createClient } from "@/utils/supabase/server";
 
-const StatusPage = () => {
-  const status = usePathname();
-  return <div>{status}</div>;
-};
+export default async function StatusPage() {
+  const supabase = await createClient();
 
-export default StatusPage;
+  const { data: dockitts } = await supabase
+    .from("dockitts")
+    .select()
+    .eq("project", "dockitt");
+  return <div>{dockitts && <DockittList dockitts={dockitts} />}</div>;
+}
