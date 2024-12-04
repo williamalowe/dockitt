@@ -16,7 +16,7 @@ export default async function NotesPage() {
 
   return (
     <main className="flex-1 flex flex-col items-center">
-      <ul>
+      <ul className="mb-20 lg:mb-0">
         {notes?.map((note) => (
           <li key={note.id}>
             <div className="chat chat-start">

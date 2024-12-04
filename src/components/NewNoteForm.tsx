@@ -7,7 +7,7 @@ import { BiSolidPaperPlane } from "react-icons/bi";
 const NewNoteForm = () => {
   const ref = useRef<HTMLFormElement>(null);
   return (
-    <form className="fixed bottom-6 flex gap-x-2"       ref={ref}
+    <form className="fixed bottom-20 lg:bottom-6 flex gap-x-2 z-20"       ref={ref}
     action={async (noteData) => {
       await addNote(noteData);
       ref.current?.reset();
