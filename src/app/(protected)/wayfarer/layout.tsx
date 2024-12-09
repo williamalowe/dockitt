@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Header currentProject={"wayfarer"} />
           <div className="flex items-center">
           <MobileNav currentProject={"wayfarer"} />
-            <div className="ml-auto">
+            <div className="ml-auto lg:hidden">
             <Logo />
             </div>
           </div>
