@@ -47,7 +47,7 @@ const MobileNav = async ({ currentProject }: { currentProject: string }) => {
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-ghost rounded-full m-1 w-full justify-start"
+              className="m-1 w-full justify-start"
             >
               <span>
                 <HiOutlineChartSquareBar />
@@ -60,7 +60,7 @@ const MobileNav = async ({ currentProject }: { currentProject: string }) => {
               href={"./kanban"}
               tabIndex={0}
               role="button"
-              className="btn btn-ghost rounded-full m-1 w-full justify-start"
+              className="m-1 w-full justify-start"
             >
               <span>
                 <HiOutlineViewGridAdd />
@@ -69,7 +69,7 @@ const MobileNav = async ({ currentProject }: { currentProject: string }) => {
             </Link>
           </li>
           <li>
-            <h5>Dockitts</h5>
+            <h5 className="font-bold">Dockitts</h5>
             <ul>
               <li>
                 <Link href={"./dockitts"}>All Dockitts</Link>
@@ -142,7 +142,7 @@ const MobileNav = async ({ currentProject }: { currentProject: string }) => {
               href={"./message-board"}
               tabIndex={0}
               role="button"
-              className="btn btn-ghost rounded-full m-1 w-full justify-start"
+              className="m-1 w-full justify-start"
             >
               <span>
                 <HiOutlineChatAlt />
