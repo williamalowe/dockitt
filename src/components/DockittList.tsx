@@ -113,44 +113,48 @@ const DockittList = ({ dockitts }: { dockitts: Dockitt[] }) => {
           <tbody>
             {/* rows */}
             {dockitts &&
-              dockitts.map((dockitt) => (
-                <tr key={dockitt.id} className="flex flex-col">
-                  <th>{dockitt.task}</th>
-                  <th className="font-normal">{dockitt.description}</th>
-                  <th className="flex flex-col">
-                    {" "}
-                    {dockitt.status === "Backlog" ? (
-                      <UpdateStatusBtns
-                        btnGroup={1}
-                        id={dockitt.id}
-                        status="Backlog"
-                      />
-                    ) : dockitt.status === "In Progress" ? (
-                      <UpdateStatusBtns
-                        btnGroup={2}
-                        id={dockitt.id}
-                        status="In Progress"
-                      />
-                    ) : dockitt.status === "Under Review" ? (
-                      <UpdateStatusBtns
-                        btnGroup={2}
-                        id={dockitt.id}
-                        status="Under Review"
-                      />
-                    ) : dockitt.status === "Completed" ? (
-                      <UpdateStatusBtns
-                        btnGroup={3}
-                        id={dockitt.id}
-                        status="Completed"
-                      />
-                    ) : (
-                      <p className="uppercase text-end text-red-500">
-                        Cancelled
-                      </p>
-                    )}
-                  </th>
-                </tr>
-              ))}
+              dockitts
+                .filter((filtered) => filtered.status === filterPath())
+                .map((dockitt) => (
+                  <tr key={dockitt.id} className="flex flex-col">
+                    <th>{dockitt.task}</th>
+                    <th className="font-normal">{dockitt.description}</th>
+                    <th className="flex flex-col">
+                      {" "}
+                      {dockitt.status === "Backlog" ? (
+                        <UpdateStatusBtns
+                          btnGroup={1}
+                          id={dockitt.id}
+                          status="Backlog"
+                        />
+                      ) : dockitt.status === "In Progress" ? (
+                        <UpdateStatusBtns
+                          btnGroup={2}
+                          id={dockitt.id}
+                          status="In Progress"
+                        />
+                      ) : dockitt.status === "Under Review" ? (
+                        <UpdateStatusBtns
+                          btnGroup={2}
+                          id={dockitt.id}
+                          status="Under Review"
+                        />
+                      ) : dockitt.status === "Completed" ? (
+                        <UpdateStatusBtns
+                          btnGroup={3}
+                          id={dockitt.id}
+                          status="Completed"
+                        />
+                      ) : (
+                        <UpdateStatusBtns
+                          btnGroup={4}
+                          id={dockitt.id}
+                          status="Cancelled"
+                        />
+                      )}
+                    </th>
+                  </tr>
+                ))}
           </tbody>
         </table>
       </div>
