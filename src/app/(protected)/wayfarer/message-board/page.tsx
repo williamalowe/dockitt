@@ -31,7 +31,9 @@ export default async function NotesPage() {
           </li>
         ))}
       </ul>
-      <NewNoteForm />
+      <div className="fixed bottom-6 ">
+        <NewNoteForm />
+      </div>
     </main>
   );
 }

@@ -13,6 +13,7 @@ export interface Dockitt {
   description: string;
   created_at: string;
   created_by: string;
+  project: string
 }
 
 export interface Note {

@@ -1,4 +1,4 @@
-import DockittKanban from "@/components/DockittKanban";
+import KanbanBoard from "@/components/KanbanBoard";
 import { createClient } from "@/utils/supabase/server";
 
 export default async function KanbanPage() {
@@ -8,9 +8,12 @@ export default async function KanbanPage() {
     .from("dockitts")
     .select()
     .eq("project", "wayfarer");
+
   return (
     <>
-      <main>{dockitts && <DockittKanban dockitts={dockitts} />}</main>
+      <main className="flex flex-1">
+        {dockitts && <KanbanBoard dockitts={dockitts} />}
+      </main>
     </>
   );
 }

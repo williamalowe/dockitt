@@ -1,10 +1,12 @@
 const Avatar = ({ username }: { username: string | undefined }) => {
   return (
-<div className="ml-4 avatar online placeholder">
-  <div className="bg-primary text-neutral-content w-16 rounded-full">
-    <span className="text-xl">{username}</span>
-  </div>
-</div>
+    <>
+      <div className="avatar placeholder">
+        <div className="bg-ghost border-2 border-neutral text-neutral w-12 rounded-full">
+          {username && <span>{username.slice(0, 1)} </span>}
+        </div>
+      </div>
+    </>
   );
 };
 

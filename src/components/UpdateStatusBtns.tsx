@@ -26,7 +26,7 @@ const UpdateStatusBtns = ({
   return (
     <>
       {btnGroup === 1 ? (
-        <div className="card-actions justify-end">
+        <div className="flex gap-x-1 overflow justify-end">
           <button
             className="btn btn-xs lg:btn-sm hover:bg-red-500"
             onClick={() => updateDockittStatusCancelled({ id: id })}
@@ -44,7 +44,7 @@ const UpdateStatusBtns = ({
           </button>
         </div>
       ) : btnGroup === 2 ? (
-        <div className="card-actions justify-end">
+        <div className="flex gap-x-1 overflow justify-end">
           <button
             className="btn btn-xs lg:btn-sm hover:bg-red-500"
             onClick={() => updateDockittStatusCancelled({ id: id })}
@@ -69,7 +69,7 @@ const UpdateStatusBtns = ({
           </button>
         </div>
       ) : btnGroup === 3 ?(
-        <div className="card-actions justify-end">
+        <div className="flex gap-x-1 justify-end">
           <button
             className="btn btn-xs lg:btn-sm hover:bg-amber-500"
             onClick={() =>
@@ -85,7 +85,7 @@ const UpdateStatusBtns = ({
             <BsCheck />
           </button>
         </div>
-      ): <div className="card-actions justify-end">
+      ): <div className="flex gap-x-1 justify-end">
       <button
         className="btn btn-xs lg:btn-sm hover:bg-green-500"
         onClick={() =>

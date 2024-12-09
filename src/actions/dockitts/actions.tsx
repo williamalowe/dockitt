@@ -18,7 +18,7 @@ export async function addDockitt(formData: FormData) {
       {
         id: Date.now(),
         task: formData.get("task") as string,
-        status: "Backlog",
+        status: formData.get("status") as string,
         priority: formData.get("priority") as string,
         tag: formData.get("tag") as string,
         description: formData.get("description") as string,

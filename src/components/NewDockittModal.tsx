@@ -1,28 +1,23 @@
-import { BsPlus, BsX } from "react-icons/bs";
+// import { BsPlus, BsX } from "react-icons/bs";
+import { HiPlus } from "react-icons/hi";
 import NewDockittForm from "./NewDockettForm";
 
-const NewDockittModal = ({ selectedProject }: {
+const NewDockittModal = ({ selectedProject, status }: {
+  status: string,
   selectedProject: string
 }) => {
   return (
     <>
-      <label htmlFor="my_modal_6" className="z-20 btn aspect-square text-xl hover:scale-110 transition">
-        <BsPlus />
-      </label>
-      <input type="checkbox" id="my_modal_6" className="modal-toggle " />
-      <div className="modal" role="dialog">
-        <div className="modal-box">
-          <h3 className="text-center capitalize mb-2 text-2xl font-bold">
-            Add new Dockitt
-          </h3>
-          <NewDockittForm selectedProject={selectedProject}/>
-          <div className="modal-action">
-            <label htmlFor="my_modal_6" className="btn aspect-square text-xl hover:scale-110 transition">
-              <BsX />
-            </label>
-          </div>
-        </div>
-      </div>
+      <label htmlFor="my_modal_7" className="btn btn-neutral rounded-full"><HiPlus /> Add New Dockitt</label>
+
+{/* Put this part before </body> tag */}
+<input type="checkbox" id="my_modal_7" className="modal-toggle" />
+<div className="modal" role="dialog">
+  <div className="modal-box">
+    <NewDockittForm selectedProject={selectedProject} status={status} />
+  </div>
+  <label className="modal-backdrop" htmlFor="my_modal_7">Close</label>
+</div>
     </>
   );
 };

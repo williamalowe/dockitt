@@ -1,35 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
-import Link from "next/link";
-import {
-  AiFillMessage,
-  AiOutlineAppstoreAdd,
-  // AiOutlineLineChart,
-  AiOutlineUnorderedList,
-} from "react-icons/ai";
-import ProjectDropdown from "./ProjectDropdown";
+import { redirect } from "next/navigation";
 import NewDockittModal from "./NewDockittModal";
 import Avatar from "./Avatar";
-import ThemeSwitcher from "./ThemeSwitcher";
-import { redirect } from "next/navigation";
-
-const navItems = [
-  {
-    href: "./dockitts",
-    icon: <AiOutlineUnorderedList />,
-  },
-  {
-    href: "./kanban",
-    icon: <AiOutlineAppstoreAdd />,
-  },
-  {
-    href: "./message-board",
-    icon: <AiFillMessage />,
-  },
-  // {
-  //   href: "./dashboard",
-  //   icon: <AiOutlineLineChart />,
-  // },
-];
 
 export default async function Header({
   currentProject,
@@ -49,28 +21,29 @@ export default async function Header({
   return (
     <>
       {/* Normal View */}
-      <header className="hidden lg:flex navbar bg-neutral">
-        <ul className="flex-1 flex gap-x-2 items-center">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <Link href={item.href}>
-                <button className="btn aspect-square text-xl hover:scale-110 transition">
-                  {item.icon}
-                </button>
-              </Link>
-            </li>
-          ))}
-          <li>
-            <ProjectDropdown />
-          </li>
-        </ul>
-        <div className="flex-1 flex items-center justify-center">
-          <h1 className="text-2xl font-bold text-white/80 capitalize">{currentProject}&apos;s Dockitts</h1>
+      <header className="hidden lg:flex navbar bg-base-100 gap-x-12">
+        <div className="flex flex-col items-start">
+          <p className="text-sm">Currently Working On:</p>
+          <p className="font-bold">{currentProject.toUpperCase()}</p>
         </div>
-        <div className="flex-1 flex items-center gap-x-2 justify-end">
-          <NewDockittModal selectedProject={currentProject} />
-          <ThemeSwitcher />
-          <Avatar username={user.email?.slice(0, 1)} />
+        <label className="input input-bordered flex items-center gap-2 text-sm rounded-full">
+          <input type="text" className="grow" placeholder="Search" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            className="h-4 w-4 opacity-70"
+          >
+            <path
+              fillRule="evenodd"
+              d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </label>
+        <div className="flex gap-x-4 ml-auto">
+          <Avatar username={user.email} />
+          <NewDockittModal selectedProject={currentProject} status={"Backlog"}/>
         </div>
       </header>
     </>
